@@ -105,7 +105,7 @@ Observações:
 | <a name="escola-faixa-etaria">`faixaEtaria`</a> | [Faixa etária](#faixa-etária)                                                              |
 | <a name="escola-capacidade">`capacidade`</a>    | Inteiro maior ou igual a zero                                                              |
 | `turnos`                                        | Objeto onde chaves são anos e valores são listas de strings representando [turnos](#turno) |
-| `rede`                                          | String representando uma [Rede escolar](#rede-escolar)                                     |
+| `rede`                                          | String representando uma [rede escolar](#rede-escolar)                                     |
 | `dataAtualizacao`                               | String com data no formato "DD/MM/AAAA"                                                    |
 
 Observações:
@@ -151,11 +151,11 @@ Observações:
 
 ### Situação da escola
 
-| Nome       | Observações                      |
-|------------|----------------------------------|
-| `Criada`   | Ainda não está em funcionamento. |
-| `Ativa`    |                                  |
-| `Extinta`  |                                  |
+| Nome       | Observações                               |
+|------------|-------------------------------------------|
+| `Criada`   | A escola ainda não está em funcionamento. |
+| `Ativa`    | A escola está em funcionamento.           |
+| `Extinta`  | A escola não está mais em funcionamento.  |
 
 ### Situação da DRE
 
@@ -270,9 +270,9 @@ Observações:
 
 #### Parâmetros
 
-| Nome     | Local | Significado                     |
-|----------|-------|---------------------------------|
-| `codigo` | URL   | [Código EOL da DREs](#dre-eol). |
+| Nome     | Local | Significado                    |
+|----------|-------|--------------------------------|
+| `codigo` | URL   | [Código EOL](#dre-eol) da DRE. |
 
 #### Erros:
 
@@ -286,9 +286,9 @@ Observações:
 
 #### Parâmetros
 
-| Nome     | Local | Significado                     |
-|----------|-------|---------------------------------|
-| `codigo` | URL   | [Código EOL da DREs](#dre-eol). |
+| Nome     | Local | Significado                    |
+|----------|-------|--------------------------------|
+| `codigo` | URL   | [Código EOL](#dre-eol) da DRE. |
 
 #### Erros:
 
@@ -316,23 +316,23 @@ Não há.
 
 #### Parâmetros
 
-| Nome                                                | Local        | Significado                                                               |
-|-----------------------------------------------------|--------------|---------------------------------------------------------------------------|
-| <a name="lista-escolas-tipo">`tipo`</a>             | Query string | Tipos de escolas a serem pesquisados.                                     |
-| <a name="lista-escolas-nome">`nome`</a>             | Query string | Nomes das escolas a serem pesquisados.                                    |
-| <a name="lista-escolas-divisao">`divisao`</a>       | Query string | Bairros, distritos e subprefeituras a serem pesquisados.                  |
-| <a name="lista-escolas-logradouro">`logradouro`</a> | Query string | Ruas a serem pesquisadas.                                                 |
-| <a name="lista-escolas-latitude">`latitude`</a>     | Query string | Área circular onde as escolas serão procuradas.                           |
-| <a name="lista-escolas-longitude">`longitude`</a>   | Query string | Área circular onde as escolas serão procuradas.                           |
-| <a name="lista-escolas-raio">`raio`</a>             | Query string | Área circular onde as escolas serão procuradas.                           |
-| <a name="lista-escolas-status">`status`</a>         | Query string | [Situações das escolas](#situação-da-escola) a serem pesquisadas.         |
-| <a name="lista-escolas-dre">`dre`</a>               | Query string | [Códigos EOL de DREs](#dre-eol) das DREs das escolas a serem pesquisadas. |
+| Nome                                                | Local        | Significado                                                       |
+|-----------------------------------------------------|--------------|-------------------------------------------------------------------|
+| <a name="lista-escolas-tipo">`tipo`</a>             | Query string | Tipos de escolas a serem pesquisados.                             |
+| <a name="lista-escolas-nome">`nome`</a>             | Query string | Nomes das escolas a serem pesquisados.                            |
+| <a name="lista-escolas-divisao">`divisao`</a>       | Query string | Bairros, distritos e subprefeituras a serem pesquisados.          |
+| <a name="lista-escolas-logradouro">`logradouro`</a> | Query string | Ruas a serem pesquisadas.                                         |
+| <a name="lista-escolas-latitude">`latitude`</a>     | Query string | Latitude da área circular onde as escolas serão procuradas.       |
+| <a name="lista-escolas-longitude">`longitude`</a>   | Query string | Longitude da área circular onde as escolas serão procuradas.      |
+| <a name="lista-escolas-raio">`raio`</a>             | Query string | Raio da área circular onde as escolas serão procuradas.           |
+| <a name="lista-escolas-status">`status`</a>         | Query string | [Situações das escolas](#situação-da-escola) a serem pesquisadas. |
+| <a name="lista-escolas-dre">`dre`</a>               | Query string | [Códigos EOL das DREs](#dre-eol) das escolas a serem pesquisadas. |
 
 Observações:
 
 * O [campo `tipo`](#lista-escolas-tipo) corresponde aos [tipos de escolas](#escola-tipo) a serem pesquisados. Se for omitido, todos os tipos de escolas são consideradas. Múltiplos tipos de escolas podem ser pesquisados ao separá-los com `|`. Por exemplo, `?tipo=EMEF|EMEI` é utilizado para pesquisar por todas as escolas do tipo EMEF ou EMEI.
 * O [campo `nome`](#lista-escolas-tipo) corresponde aos nomes de escolas a serem pesquisados. Se for omitido, todas as escolas são consideradas. Múltiplos nomes de escolas podem ser pesquisados ao separá-los com `|`. Expressões separadas por ponto-e-vírgula podem aparecer em qualquer parte e em qualquer ordem no nome. O `|` tem precedência sobre o `;`. Por exemplo, `?nome=João Pedro;Silva|Azevedo` pode encontrar escolas chamadas de "João Pedro Lima da Silva", "Carlos Silva de João Pedro" e "Ramos de Azevedo", mas não vai encontrar "João Silva Pedro".
-* O [campo `divisao`](#lista-escolas-divisao) corresponde aos bairros, distritos, subdistritos ou subprefeituras onde a escola deve ser procurado. É aplicado com a mesma regra de busca dada pelo campo `nome`. Por exemplo, uma busca em `?divisao=Ipiranga|Sacomã|Cursino&nome=João` irá retornar todas as escolas que estejam no distrito, subprefeitura ou bairro do Ipiranga, Sacomã ou Cursino.
+* O [campo `divisao`](#lista-escolas-divisao) corresponde aos bairros, distritos, subdistritos ou subprefeituras onde a escola deve ser procurado. É aplicado com a mesma regra de busca dada pelo campo `nome`. Por exemplo, uma busca em `?divisao=Ipiranga|Sacomã|Cursino&nome=João` irá retornar todas as escolas que estejam no distrito, subprefeitura ou bairro do Ipiranga, Sacomã ou Cursino e que tenham "João" como parte do nome.
 * O [campo `logradouro`](#lista-escolas-logradouro) corresponde ao nome da rua, avenida, praça, etc. onde a escola deve ser procurado. É aplicado com a mesma regra de busca dada pelo campo `nome`.
 * Os campos [`latitude`](#lista-escolas-latitude), [`longitude`](#lista-escolas-longitude) e [`raio`](#lista-escolas-raio), se estiverem presentes, devem ser informados juntos. Não é permitido que um deles seja informado e os outros dois não ou que dois deles sejam informados e o terceiro não. Corresponde a busca por escolas que estejam dentro de um círculo centrado na latitude e longitude informados. Se omitidos, todas as escolas são consideradas.
 * O [campo `latitude`](#lista-escolas-latitude) é dado em graus e está entre -90 e +90.
@@ -344,7 +344,7 @@ Observações:
 
 #### Erros:
 
-* **422**: Se qualquer um dos parâmetros for apresentado mais do que uma vez na URL.
+* **422**: Se qualquer um dos parâmetros for apresentado mais do que uma vez na *query string*.
 * **422**: Se apenas um ou apenas dois dos parâmetros `latitude`, `longitude` e `raio` forem especificados.
 * **422**: Se a latitude for menor que -90.0, maior que +90.0 ou que não puder ser interpretada como um número.
 * **422**: Se a longitude for menor que -180.0, maior que +180.0 ou que não puder ser interpretada como um número.
