@@ -12,7 +12,7 @@
 | `complemento`                                | String                                                       |
 | `cep`                                        | String no formato da expressão regular `[0-9]{5}\-[0-9\]{3}` |
 | `bairro`                                     | String                                                       |
-| `distrito`                                   | String                                                       |
+| <a name="endereco-distrito">`distrito`</a>   | String                                                       |
 | `latitude`                                   | Ponto flutuante entre -90.0 e +90.0                          |
 | `longitude`                                  | Ponto flutuante entre -180.0 e +180.0                        |
 | <a name="endereco-municipio">`municipio`</a> | String                                                       |
@@ -21,7 +21,7 @@
 
 Observações:
 
-* O [campo `eol`](#endereco-tipo) pode especificar rua, avenida, praça, estrada, alameda, quadra, rodovia, travessa, etc.
+* O [campo `tipo`](#endereco-tipo) pode especificar rua, avenida, praça, estrada, alameda, quadra, rodovia, travessa, etc.
 * O [campo `numero`](#endereco-numero), apesar do nome, nem sempre é numérico. Por exemplo: "Baker Street, 221B".
 * No caso do município de São Paulo, o [campo `distito`](#endereco-distrito) corresponde a subprefeitura.
 * O [campo `municipio`](#endereco-municipio) na maioria das vezes conterá o valor "São Paulo". Mas no caso do endereço de alunos ou professores, pode ser um outro município.
@@ -58,6 +58,8 @@ Observações:
 | <a name="link-tipo">`tipo`</a>   | String |
 | <a name="link-valor">`valor`</a> | String |
 
+Observações:
+
 * O [campo `tipo`](#link-tipo) pode ser "Twitter", "Instagram", "Facebook", "Youtube", "Blog", "Website", etc.
 * O [campo `valor`](#link-valor) pode ser uma URL, nome de domínio, nome de usuário ou algo equivalente que sirva para identificar unicamente a entidade na respectiva rede.
 
@@ -71,7 +73,7 @@ Observações:
 | `telefones`                 | Lista de [telefones](#telefone)                            |
 | `emails`                    | Lista de strings                                           |
 | `status`                    | String representando a [situação da DRE](#situação-da-dre) |
-| `dataAtualizacao`           | String com data no formato "DD/MM/AAAA".                   |
+| `dataAtualizacao`           | String com data no formato "DD/MM/AAAA"                    |
 
 Observações:
 
@@ -94,17 +96,17 @@ Observações:
 | `status`                                        | String representando a [situação da escola](#situação-da-escola)                           |
 | <a name="escola-dre">`dre`</a>                  | [DRE](#dre)                                                                                |
 | `redesSociais`                                  | Lista de [links](#link)                                                                    |
-| `dataCriacao`                                   | String com data no formato "DD/MM/AAAA".                                                   |
-| `dataCriacaoDOM`                                | String com data no formato "DD/MM/AAAA".                                                   |
-| `dataInicioFuncionamento`                       | String com data no formato "DD/MM/AAAA".                                                   |
-| `dataInicioConvenio`                            | String com data no formato "DD/MM/AAAA".                                                   |
-| `dataAutorizacao`                               | String com data no formato "DD/MM/AAAA".                                                   |
-| `dataExtincao`                                  | String com data no formato "DD/MM/AAAA".                                                   |
+| `dataCriacao`                                   | String com data no formato "DD/MM/AAAA"                                                    |
+| `dataCriacaoDOM`                                | String com data no formato "DD/MM/AAAA"                                                    |
+| `dataInicioFuncionamento`                       | String com data no formato "DD/MM/AAAA"                                                    |
+| `dataInicioConvenio`                            | String com data no formato "DD/MM/AAAA"                                                    |
+| `dataAutorizacao`                               | String com data no formato "DD/MM/AAAA"                                                    |
+| `dataExtincao`                                  | String com data no formato "DD/MM/AAAA"                                                    |
 | <a name="escola-faixa-etaria">`faixaEtaria`</a> | [Faixa etária](#faixa-etária)                                                              |
-| <a name="escola-capacidade>`capacidade`</a>     | Inteiro maior ou igual a zero                                                              |
+| <a name="escola-capacidade">`capacidade`</a>    | Inteiro maior ou igual a zero                                                              |
 | `turnos`                                        | Objeto onde chaves são anos e valores são listas de strings representando [turnos](#turno) |
-| `rede`                                          | String representando uma [Rede escolar](#rede escolar)                                     |
-| `dataAtualizacao`                               | String com data no formato "DD/MM/AAAA".                                                   |
+| `rede`                                          | String representando uma [Rede escolar](#rede-escolar)                                     |
+| `dataAtualizacao`                               | String com data no formato "DD/MM/AAAA"                                                    |
 
 Observações:
 
@@ -240,7 +242,7 @@ Observações:
 |----------|-------|--------------------------------------------|
 | `codigo` | URL   | [Código PAPA](#escola-papa) de uma escola. |
 
-#### Erros:
+#### Erros
 
 * 404 - Se o `código` não corresponder a uma string numérica ou não corresponder ao código PAPA de nenhuma escola.
 
