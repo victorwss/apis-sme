@@ -347,6 +347,6 @@ Observações:
 
 * **422**: Se qualquer um dos parâmetros for apresentado mais do que uma vez na *query string*.
 * **422**: Se apenas um ou apenas dois dos parâmetros `latitude`, `longitude` e `raio` forem especificados.
-* **422**: Se a latitude for menor que -90.0, maior que +90.0 ou que não puder ser interpretada como um número.
-* **422**: Se a longitude for menor que -180.0, maior que +180.0 ou que não puder ser interpretada como um número.
+* **422**: Se a latitude for menor que -90.0, maior que +90.0 ou não puder ser interpretada como um número.
+* **422**: Se a longitude for menor que -180.0, maior que +180.0 ou não puder ser interpretada como um número.
 * **422**: Se o raio for menor que 0 ou que não puder ser interpretado como um número.
