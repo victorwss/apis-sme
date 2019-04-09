@@ -81,32 +81,32 @@ Observações:
 
 ### Escola
 
-| Campo                                           | Tipo                                                                                       | Suportado?                               |
-|-------------------------------------------------|--------------------------------------------------------------------------------------------| ---------------------------------------- |
-| <a name="escola-eol">`eol`</a>                  | String numérica                                                                            | Sim.                                     |
-| <a name="escola-inep">`inep`</a>                | String numérica                                                                            | Não. Por enquanto, estará sempre `null`. |
-| <a name="escola-papa">`papa`</a>                | String numérica                                                                            | Não. Por enquanto, estará sempre `null`. |
-| <a name="escola-cie">`cie`</a>                  | String numérica?                                                                           | Não. Por enquanto, estará sempre `null`. |
-| `nome`                                          | String                                                                                     | Sim.                                     |
-| `nomesAnteriores`                               | Lista de strings                                                                           | Não. Por enquanto, estará sempre `null`. |
-| `endereco`                                      | [Endereço](#endereço)                                                                      | Não. Por enquanto, estará sempre `null`. |
-| <a name="escola-tipo">`tipo`</a>                | String representando o [tipo da escola](#tipo-de-escola)                                   | Sim.                                     |
-| `telefones`                                     | Lista de [telefones](#telefone)                                                            | Não. Por enquanto, estará sempre `null`. |
-| `emails`                                        | Lista de strings                                                                           | Não. Por enquanto, estará sempre `null`. |
-| `status`                                        | String representando a [situação da escola](#situação-da-escola)                           | Não. Por enquanto, estará sempre `null`. |
-| <a name="escola-dre">`dre`</a>                  | [DRE](#dre)                                                                                | Não. Por enquanto, estará sempre `null`. |
-| `redesSociais`                                  | Lista de [links](#link)                                                                    | Não. Por enquanto, estará sempre `null`. |
-| `dataCriacao`                                   | String com data no formato "DD/MM/AAAA"                                                    | Não. Por enquanto, estará sempre `null`. |
-| `dataCriacaoDOM`                                | String com data no formato "DD/MM/AAAA"                                                    | Não. Por enquanto, estará sempre `null`. |
-| `dataInicioFuncionamento`                       | String com data no formato "DD/MM/AAAA"                                                    | Não. Por enquanto, estará sempre `null`. |
-| `dataInicioConvenio`                            | String com data no formato "DD/MM/AAAA"                                                    | Não. Por enquanto, estará sempre `null`. |
-| `dataAutorizacao`                               | String com data no formato "DD/MM/AAAA"                                                    | Não. Por enquanto, estará sempre `null`. |
-| `dataExtincao`                                  | String com data no formato "DD/MM/AAAA"                                                    | Não. Por enquanto, estará sempre `null`. |
-| <a name="escola-faixa-etaria">`faixaEtaria`</a> | [Faixa etária](#faixa-etária)                                                              | Não. Por enquanto, estará sempre `null`. |
-| <a name="escola-capacidade">`capacidade`</a>    | Inteiro maior ou igual a zero                                                              | Não. Por enquanto, estará sempre `null`. |
-| `turnos`                                        | Objeto onde chaves são anos e valores são listas de strings representando [turnos](#turno) | Não. Por enquanto, estará sempre `null`. |
-| `rede`                                          | String representando uma [rede escolar](#rede-escolar)                                     | Não. Por enquanto, estará sempre `null`. |
-| `dataAtualizacao`                               | String com data no formato "DD/MM/AAAA"                                                    | Não. Por enquanto, estará sempre `null`. |
+| Campo                                           | Tipo                                                                                       | Suportado? |
+|-------------------------------------------------|--------------------------------------------------------------------------------------------| -----------|
+| <a name="escola-eol">`eol`</a>                  | String numérica                                                                            | ✔️ Sim.    |
+| <a name="escola-inep">`inep`</a>                | String numérica                                                                            | ❌ Não.    |
+| <a name="escola-papa">`papa`</a>                | String numérica                                                                            | ❌ Não.    |
+| <a name="escola-cie">`cie`</a>                  | String numérica?                                                                           | ❌ Não.    |
+| `nome`                                          | String                                                                                     | ✔️ Sim.    |
+| `nomesAnteriores`                               | Lista de strings                                                                           | ❌ Não.    |
+| `endereco`                                      | [Endereço](#endereço)                                                                      | ❌ Não.    |
+| <a name="escola-tipo">`tipo`</a>                | String representando o [tipo da escola](#tipo-de-escola)                                   | ✔️ Sim.    |
+| `telefones`                                     | Lista de [telefones](#telefone)                                                            | ❌ Não.    |
+| `emails`                                        | Lista de strings                                                                           | ❌ Não.    |
+| `status`                                        | String representando a [situação da escola](#situação-da-escola)                           | ❌ Não.    |
+| <a name="escola-dre">`dre`</a>                  | [DRE](#dre)                                                                                | ❌ Não.    |
+| `redesSociais`                                  | Lista de [links](#link)                                                                    | ❌ Não.    |
+| `dataCriacao`                                   | String com data no formato "DD/MM/AAAA"                                                    | ❌ Não.    |
+| `dataCriacaoDOM`                                | String com data no formato "DD/MM/AAAA"                                                    | ❌ Não.    |
+| `dataInicioFuncionamento`                       | String com data no formato "DD/MM/AAAA"                                                    | ❌ Não.    |
+| `dataInicioConvenio`                            | String com data no formato "DD/MM/AAAA"                                                    | ❌ Não.    |
+| `dataAutorizacao`                               | String com data no formato "DD/MM/AAAA"                                                    | ❌ Não.    |
+| `dataExtincao`                                  | String com data no formato "DD/MM/AAAA"                                                    | ❌ Não.    |
+| <a name="escola-faixa-etaria">`faixaEtaria`</a> | [Faixa etária](#faixa-etária)                                                              | ❌ Não.    |
+| <a name="escola-capacidade">`capacidade`</a>    | Inteiro maior ou igual a zero                                                              | ❌ Não.    |
+| `turnos`                                        | Objeto onde chaves são anos e valores são listas de strings representando [turnos](#turno) | ❌ Não.    |
+| `rede`                                          | String representando uma [rede escolar](#rede-escolar)                                     | ❌ Não.    |
+| `dataAtualizacao`                               | String com data no formato "DD/MM/AAAA"                                                    | ❌ Não.    |
 
 Observações:
 
@@ -117,6 +117,7 @@ Observações:
 * O [campo `dre`](#escola-dre) não é uma string e nem o código da DRE. Contém o objeto correspondente a DRE completo a ser aninhado dentro da estrutura da escola.
 * O [campo `faixaEtaria`](#escola-faixa-etaria) é um objeto que representa a faixa etária em anos de atendimento da escola.
 * O [campo `capacidade`](#escola-capacidade) representa a capacidade em número de matrículas da escola.
+* Todos os campos que ainda não são suportados terão o valor `null`. Estes campos deverão ser suportados no futuro.
 
 ## Enums
 
