@@ -81,32 +81,32 @@ Observações:
 
 ### Escola
 
-| Campo                                           | Tipo                                                                                       |
-|-------------------------------------------------|--------------------------------------------------------------------------------------------|
-| <a name="escola-eol">`eol`</a>                  | String numérica                                                                            |
-| <a name="escola-inep">`inep`</a>                | String numérica                                                                            |
-| <a name="escola-papa">`papa`</a>                | String numérica                                                                            |
-| <a name="escola-cie">`cie`</a>                  | String numérica?                                                                           |
-| `nome`                                          | String                                                                                     |
-| `nomesAnteriores`                               | Lista de strings                                                                           |
-| `endereco`                                      | [Endereço](#endereço)                                                                      |
-| <a name="escola-tipo">`tipo`</a>                | String representando o [tipo da escola](#tipo-de-escola)                                   |
-| `telefones`                                     | Lista de [telefones](#telefone)                                                            |
-| `emails`                                        | Lista de strings                                                                           |
-| `status`                                        | String representando a [situação da escola](#situação-da-escola)                           |
-| <a name="escola-dre">`dre`</a>                  | [DRE](#dre)                                                                                |
-| `redesSociais`                                  | Lista de [links](#link)                                                                    |
-| `dataCriacao`                                   | String com data no formato "DD/MM/AAAA"                                                    |
-| `dataCriacaoDOM`                                | String com data no formato "DD/MM/AAAA"                                                    |
-| `dataInicioFuncionamento`                       | String com data no formato "DD/MM/AAAA"                                                    |
-| `dataInicioConvenio`                            | String com data no formato "DD/MM/AAAA"                                                    |
-| `dataAutorizacao`                               | String com data no formato "DD/MM/AAAA"                                                    |
-| `dataExtincao`                                  | String com data no formato "DD/MM/AAAA"                                                    |
-| <a name="escola-faixa-etaria">`faixaEtaria`</a> | [Faixa etária](#faixa-etária)                                                              |
-| <a name="escola-capacidade">`capacidade`</a>    | Inteiro maior ou igual a zero                                                              |
-| `turnos`                                        | Objeto onde chaves são anos e valores são listas de strings representando [turnos](#turno) |
-| `rede`                                          | String representando uma [rede escolar](#rede-escolar)                                     |
-| `dataAtualizacao`                               | String com data no formato "DD/MM/AAAA"                                                    |
+| Campo                                           | Tipo                                                                                       | Suportado?                               |
+|-------------------------------------------------|--------------------------------------------------------------------------------------------| ---------------------------------------- |
+| <a name="escola-eol">`eol`</a>                  | String numérica                                                                            | Sim.                                     |
+| <a name="escola-inep">`inep`</a>                | String numérica                                                                            | Não. Por enquanto, estará sempre `null`. |
+| <a name="escola-papa">`papa`</a>                | String numérica                                                                            | Não. Por enquanto, estará sempre `null`. |
+| <a name="escola-cie">`cie`</a>                  | String numérica?                                                                           | Não. Por enquanto, estará sempre `null`. |
+| `nome`                                          | String                                                                                     | Sim.                                     |
+| `nomesAnteriores`                               | Lista de strings                                                                           | Não. Por enquanto, estará sempre `null`. |
+| `endereco`                                      | [Endereço](#endereço)                                                                      | Não. Por enquanto, estará sempre `null`. |
+| <a name="escola-tipo">`tipo`</a>                | String representando o [tipo da escola](#tipo-de-escola)                                   | Sim.                                     |
+| `telefones`                                     | Lista de [telefones](#telefone)                                                            | Não. Por enquanto, estará sempre `null`. |
+| `emails`                                        | Lista de strings                                                                           | Não. Por enquanto, estará sempre `null`. |
+| `status`                                        | String representando a [situação da escola](#situação-da-escola)                           | Não. Por enquanto, estará sempre `null`. |
+| <a name="escola-dre">`dre`</a>                  | [DRE](#dre)                                                                                | Não. Por enquanto, estará sempre `null`. |
+| `redesSociais`                                  | Lista de [links](#link)                                                                    | Não. Por enquanto, estará sempre `null`. |
+| `dataCriacao`                                   | String com data no formato "DD/MM/AAAA"                                                    | Não. Por enquanto, estará sempre `null`. |
+| `dataCriacaoDOM`                                | String com data no formato "DD/MM/AAAA"                                                    | Não. Por enquanto, estará sempre `null`. |
+| `dataInicioFuncionamento`                       | String com data no formato "DD/MM/AAAA"                                                    | Não. Por enquanto, estará sempre `null`. |
+| `dataInicioConvenio`                            | String com data no formato "DD/MM/AAAA"                                                    | Não. Por enquanto, estará sempre `null`. |
+| `dataAutorizacao`                               | String com data no formato "DD/MM/AAAA"                                                    | Não. Por enquanto, estará sempre `null`. |
+| `dataExtincao`                                  | String com data no formato "DD/MM/AAAA"                                                    | Não. Por enquanto, estará sempre `null`. |
+| <a name="escola-faixa-etaria">`faixaEtaria`</a> | [Faixa etária](#faixa-etária)                                                              | Não. Por enquanto, estará sempre `null`. |
+| <a name="escola-capacidade">`capacidade`</a>    | Inteiro maior ou igual a zero                                                              | Não. Por enquanto, estará sempre `null`. |
+| `turnos`                                        | Objeto onde chaves são anos e valores são listas de strings representando [turnos](#turno) | Não. Por enquanto, estará sempre `null`. |
+| `rede`                                          | String representando uma [rede escolar](#rede-escolar)                                     | Não. Por enquanto, estará sempre `null`. |
+| `dataAtualizacao`                               | String com data no formato "DD/MM/AAAA"                                                    | Não. Por enquanto, estará sempre `null`. |
 
 Observações:
 
@@ -212,7 +212,7 @@ Observações:
 
 #### Erros:
 
-* 404 - Se o `código` não corresponder a uma string numérica ou não corresponder ao código EOL de nenhuma escola.
+* **404**: Se o `código` não corresponder a uma string numérica ou não corresponder ao código EOL de nenhuma escola.
 
 ### Pesquisar escolas por código INEP
 
@@ -228,7 +228,7 @@ Observações:
 
 #### Erros:
 
-* 404 - Se o `código` não corresponder a uma string numérica ou não corresponder ao código INEP de nenhuma escola.
+* **404**: Se o `código` não corresponder a uma string numérica ou não corresponder ao código INEP de nenhuma escola.
 
 ### Pesquisar escolas por código PAPA
 
@@ -244,7 +244,7 @@ Observações:
 
 #### Erros
 
-* 404 - Se o `código` não corresponder a uma string numérica ou não corresponder ao código PAPA de nenhuma escola.
+* **404**: Se o `código` não corresponder a uma string numérica ou não corresponder ao código PAPA de nenhuma escola.
 
 ### Pesquisar escolas por código CIE
 
@@ -260,7 +260,7 @@ Observações:
 
 #### Erros:
 
-* 404 - Se o `código` não corresponder a uma string numérica ou não corresponder ao código CIE de nenhuma escola.
+* **404**: Se o `código` não corresponder a uma string numérica ou não corresponder ao código CIE de nenhuma escola.
 
 ### Pesquisar escolas por DRE
 
@@ -276,7 +276,7 @@ Observações:
 
 #### Erros:
 
-* 404 - Se o `código` não corresponder a uma string numérica ou não corresponder ao código EOL de nenhuma DRE.
+* **404**: Se o `código` não corresponder a uma string numérica ou não corresponder ao código EOL de nenhuma DRE.
 
 ### Pesquisar DRE por código
 
@@ -292,7 +292,7 @@ Observações:
 
 #### Erros:
 
-* 404 - Se o `código` não corresponder a uma string numérica ou não corresponder ao código EOL de nenhuma DRE.
+* **404**: Se o `código` não corresponder a uma string numérica ou não corresponder ao código EOL de nenhuma DRE.
 
 ### Listar DREs
 
